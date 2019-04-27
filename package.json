@@ -1,4 +1,5 @@
 {
+  "private": true,
   "name": "trm",
   "description": "The on-screen graphics used during Tomb Raider Marathon IV",
   "version": "4.0.0",
@@ -16,13 +17,6 @@
   "nodecg": {
     "compatibleRange": "^1.3.0",
     "dashboardPanels": [
-      {
-        "name": "stationIdent",
-        "title": "Station Identification",
-        "width": 3,
-        "file": "station-identification/station-identification.html",
-        "headerColor": "#00AEB3"
-      },
       {
         "name": "nowPlaying",
         "title": "Now Playing",
@@ -188,7 +182,12 @@
         "height": 720
       },
       {
-        "file": "16_9_game_greenscreen.html",
+        "file": "16_9_game_race.html",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "file": "4_3_game.html",
         "width": 1280,
         "height": 720
       },

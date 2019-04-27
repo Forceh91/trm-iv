@@ -59,11 +59,17 @@
                     right: 0;
                 }
 
-                #donationNotifier {
-                    bottom: 69px;
-                    position: absolute;
-                    right: 0;
-                }
+
+                #donation-notifier {
+            bottom: 50px;
+            position: absolute;
+            right: 0;
+          }
+
+          #donation-notifier trm-donation-notifier {
+            border-bottom: 0;
+            border-right: 0;
+          }
 
                 #body {
                     align-items: center;
@@ -94,9 +100,9 @@
                 <trm-omnibar data-hide-timer="true" data-hide-deaths="true"></trm-omnibar>
             </div>
 
-            <div id="donationNotifier">
+            <div id="donation-notifier">
                 <trm-donation-notifier></trm-donation-notifier>
-            </div>
+              </div>
 
             <div id="body">
                 <trm-countdown></trm-countdown>

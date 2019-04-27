@@ -59,6 +59,10 @@
             right: 10px;
           }
 
+          #donation-notifier trm-donation-notifier {
+            height: 160px;
+          }
+
           #station-identification {
             bottom: 50px;
             left: 0;
@@ -68,25 +72,30 @@
             width: 755px;
           }
 
-          #game-feed {
+          #game-feed-left {
             background: magenta;
             border: 2px solid #00aeb3;
-            height: 533px;
+            height: 360px;
             position: absolute;
-            right: 10px;
-            top: 10px;
-            width: 950px;
+            left: 10px;
+            top: 30px;
+            width: 640px;
           }
 
-          #game-feed img {
-            height: 100%;
-            width: 100%;
+          #game-feed-right {
+            background: magenta;
+            border: 2px solid #00aeb3;
+            height: 360px;
+            position: absolute;
+            right: 10px;
+            top: 30px;
+            width: 640px;
           }
 
           #run-info {
             left: 10px;
             position: absolute;
-            top: 10px;
+            bottom: 60px;
           }
         </style>
 
@@ -102,7 +111,8 @@
           <trm-station-identification></trm-station-identification>
         </div>
 
-        <div id="game-feed"></div>
+        <div id="game-feed-left"></div>
+        <div id="game-feed-right"></div>
 
         <div id="run-info">
           <trm-run-info></trm-run-info>

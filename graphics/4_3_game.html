@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>16x9 Game</title>
+    <title>4x3 Game</title>
 
     <link rel="stylesheet" href="style/layout.css" />
     <link rel="import" href="../shared/imports/required.html" />
@@ -71,6 +71,18 @@
           #game-feed {
             background: magenta;
             border: 2px solid #00aeb3;
+            border-left-width: 0;
+            border-right-width: 0;
+            height: 533px;
+            position: absolute;
+            right: 130px;
+            top: 10px;
+            width: 710px;
+          }
+
+          #game-feed-background {
+            background: magenta;
+            border: 2px solid #00aeb3;
             height: 533px;
             position: absolute;
             right: 10px;
@@ -102,6 +114,7 @@
           <trm-station-identification></trm-station-identification>
         </div>
 
+        <div id="game-feed-background"></div>
         <div id="game-feed"></div>
 
         <div id="run-info">

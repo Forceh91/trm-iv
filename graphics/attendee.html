@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Attendee</title>
+
+    <link rel="stylesheet" href="style/layout.css" />
+    <link rel="import" href="../shared/imports/required.html" />
+    <link
+      rel="stylesheet"
+      href="../shared/fonts/fontawesome/font-awesome.min.css"
+    />
+
+    <link
+      rel="import"
+      href="elements/children/trm-attendee/trm-attendee-timer.html"
+    />
+    <link
+      rel="import"
+      href="elements/children/trm-attendee/trm-attendee-datetime.html"
+    />
+    <link
+      rel="import"
+      href="elements/children/trm-attendee/trm-attendee-total.html"
+    />
+    <link
+      rel="import"
+      href="elements/children/trm-attendee/trm-attendee-donations.html"
+    />
+    <link
+      rel="import"
+      href="elements/children/trm-attendee/trm-attendee-donation-list.html"
+    />
+    <link
+      rel="import"
+      href="elements/children/trm-attendee/trm-attendee-donation-goals.html"
+    />
+    <link
+      rel="import"
+      href="elements/children/trm-attendee/trm-attendee-donation-polls.html"
+    />
+    <link
+      rel="import"
+      href="elements/children/trm-attendee/trm-attendee-donation-goal-achieved.html"
+    />
+
+    <style>
+      #container {
+        background: #333;
+        color: #cacaca;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+      <layout-app></layout-app>
+    </div>
+
+    <dom-module id="layout-app">
+      <template>
+        <style>
+          * {
+            box-sizing: border-box;
+          }
+
+          #top-bar {
+            border-bottom: 1px solid #cacaca;
+            display: flex;
+            height: 45px;
+            width: 100%;
+          }
+
+          #timer {
+            text-align: left;
+            width: 100%;
+          }
+
+          #datetime {
+            text-align: right;
+            width: 100%;
+          }
+
+          #left-col {
+            float: left;
+            padding: 15px;
+            width: 50%;
+          }
+
+          #right-col {
+            float: left;
+            padding: 15px;
+            width: 50%;
+          }
+
+          #donation-total {
+            width: 100%;
+          }
+
+          #death-count {
+            width: 100%;
+          }
+
+          #donation-list,
+          #donation-goals,
+          #donation-polls {
+            margin-top: 20px;
+          }
+
+          trm-attendee-donations {
+            display: flex;
+            position: absolute;
+            top: 0;
+          }
+        </style>
+
+        <div id="top-bar">
+          <div id="timer">
+            <trm-attendee-timer></trm-attendee-timer>
+          </div>
+
+          <div id="datetime">
+            <trm-attendee-datetime></trm-attendee-datetime>
+          </div>
+        </div>
+
+        <div id="left-col">
+          <div id="donation-total">
+            <trm-attendee-total></trm-attendee-total>
+          </div>
+
+          <div id="donation-list">
+            <trm-attendee-donation-list></trm-attendee-donation-list>
+          </div>
+        </div>
+
+        <div id="right-col">
+          <div id="donation-goals">
+            <trm-attendee-donation-goals></trm-attendee-donation-goals>
+          </div>
+
+          <div id="donation-polls">
+            <trm-attendee-donation-polls></trm-attendee-donation-polls>
+          </div>
+        </div>
+
+        <trm-attendee-donations></trm-attendee-donations>
+      </template>
+
+      <script>
+        Polymer({
+          is: "layout-app",
+          properties: {}
+        });
+      </script>
+    </dom-module>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        TweenLite.to(document.body, 0.333, {
+          opacity: 1,
+          ease: Power1.easeOut
+        });
+
+        window.addEventListener("keydown", e => {
+          switch (e.keyCode) {
+            case 33: // page up
+              nodecg.sendMessage("increaseDeaths");
+              break;
+
+            case 34: // page down
+              nodecg.sendMessage("decreaseDeaths");
+              break;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

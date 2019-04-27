@@ -1,0 +1,28 @@
+<dom-module id="trm-attendee-total">
+  <template>
+    <style>
+      :host {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 100%;
+        width: 100%;
+      }
+
+      .total-container {
+        color: #00aeb3;
+        font-size: 50px;
+      }
+
+      .total-title {
+        font-size: 15px;
+        text-transform: uppercase;
+      }
+    </style>
+
+    <div class="total-title">Donation Total</div>
+    <div class="total-container">$<span id="total"></span></div>
+  </template>
+
+  <script src="trm-attendee-total.js"></script>
+</dom-module>

@@ -1,0 +1,103 @@
+<dom-module id="trm-omnibar-poll">
+  <template>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      :host {
+        box-sizing: border-box;
+        display: flex;
+        float: left;
+        height: 100%;
+        overflow: hidden;
+        width: 100%;
+      }
+
+      #label,
+      .optionLabel {
+        background: #009196;
+        color: #fff;
+        display: block;
+        float: left;
+        font-size: 16px;
+        font-weight: bold;
+        height: 100%;
+        padding: 10px;
+        text-transform: uppercase;
+        white-space: nowrap;
+        width: auto;
+      }
+
+      .labelContainer {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        width: 100%;
+      }
+
+      .body {
+        display: inline-block;
+        height: 100%;
+        position: relative;
+        width: auto;
+      }
+
+      #pollOptions {
+        display: inline-block;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      #pollOptionsContainer {
+        display: block;
+        height: 100%;
+      }
+
+      .optionLabel {
+        background: #666;
+        color: #fff;
+        height: 100%;
+        max-width: initial;
+      }
+
+      .optionTotal {
+        display: inline-block;
+        font-size: 22px;
+        height: 100%;
+        line-height: 50px;
+        text-align: center;
+        padding: 0 10px;
+        width: auto;
+      }
+
+      .is-winning .optionTotal {
+        color: #00aeb3; /*rgb(133, 24, 87);*/
+        font-weight: bold;
+      }
+    </style>
+
+    <div id="label"><div class="labelContainer">Poll - [[poll.name]]</div></div>
+    <div id="pollOptions">
+      <div id="pollOptionsContainer">
+        <template
+          is="dom-repeat"
+          items="[[_sortedOptions(poll.options)]]"
+          as="polloption"
+          sort="_sortPoll"
+        >
+          <div class$="[[_displayClass(index)]]">
+            <div class="optionLabel">
+              <div class="labelContainer">[[polloption.name]]</div>
+            </div>
+            <div class="optionTotal">
+              [[_displayTotal(polloption.totalAmountRaised)]]
+            </div>
+          </div>
+        </template>
+      </div>
+    </div>
+  </template>
+
+  <script src="trm-omnibar-poll.js"></script>
+</dom-module>

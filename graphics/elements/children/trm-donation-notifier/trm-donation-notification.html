@@ -1,0 +1,57 @@
+<dom-module id="trm-donation-notification">
+  <template>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      #body {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        height: 100%;
+        justify-content: center;
+        opacity: 0;
+        width: 100%;
+      }
+
+      #donationInfo {
+        float: left;
+      }
+
+      #donationAmount {
+        color: #00aeb3;
+        font-size: 2.2rem;
+        font-weight: bold;
+        text-align: center;
+        width: 100%;
+      }
+
+      #donationName {
+        font-size: 1.7rem;
+        overflow: hidden;
+        text-align: center;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
+      }
+
+      #donationImage {
+        float: left;
+        margin-right: 20px;
+        height: 70px;
+      }
+    </style>
+
+    <div id="body">
+      <img id="donationImage" />
+      <div id="donationInfo">
+        <div id="donationAmount"></div>
+        <div id="donationName"></div>
+      </div>
+      <audio id="donationSound"></audio>
+    </div>
+  </template>
+
+  <script src="trm-donation-notification.js"></script>
+</dom-module>

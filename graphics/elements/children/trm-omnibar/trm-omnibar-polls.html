@@ -1,0 +1,28 @@
+<link
+  rel="import"
+  href="../../../../bower_components/iron-selector/iron-selection.html"
+/>
+<link rel="import" href="trm-omnibar-poll.html" />
+
+<dom-module id="trm-omnibar-polls">
+  <template>
+    <style>
+      :host {
+        display: flex;
+        height: 100%;
+        width: 100%;
+      }
+
+      #polls {
+        display: inline-block;
+        height: 100%;
+        opacity: 0;
+        width: 100%;
+      }
+    </style>
+
+    <iron-selector id="polls"></iron-selector>
+  </template>
+
+  <script src="trm-omnibar-polls.js"></script>
+</dom-module>

@@ -1,0 +1,55 @@
+<link
+  rel="import"
+  href="../../../../bower_components/iron-selector/iron-selector.html"
+/>
+<link rel="import" href="trm-attendee-donation-poll-item.html" />
+
+<dom-module id="trm-attendee-donation-polls">
+  <template>
+    <style>
+      :host {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 100%;
+        overflow: hidden;
+        width: 100%;
+      }
+
+      #pollList {
+        align-items: center;
+        color: #fff;
+        font-size: 30px;
+        justify-content: center;
+        margin-top: 20px;
+        width: 100%;
+      }
+
+      .donation-polls-title {
+        font-size: 15px;
+        text-transform: uppercase;
+      }
+
+      #pollList trm-attendee-donation-poll-item {
+        display: none;
+      }
+
+      #pollList trm-attendee-donation-poll-item.iron-selected {
+        opacity: 0;
+        display: flex;
+      }
+
+      #noData {
+        font-size: 20px;
+        margin-top: 20px;
+        text-transform: uppercase;
+      }
+    </style>
+
+    <div class="donation-polls-title">Donation Polls</div>
+    <div id="noData">There are currently no donation polls</div>
+    <iron-selector id="pollList"></iron-selector>
+  </template>
+
+  <script src="trm-attendee-donation-polls.js"></script>
+</dom-module>

@@ -1,0 +1,236 @@
+{
+  "name": "trm",
+  "description": "The on-screen graphics used during Tomb Raider Marathon IV",
+  "version": "4.0.0",
+  "contributors": [
+    "Matt Hadden <info@tombraidermarathon.com>"
+  ],
+  "dependencies": {
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2",
+    "socket.io": "^2.2.0"
+  },
+  "devDependencies": {
+    "web-request": "^1.0.7"
+  },
+  "nodecg": {
+    "compatibleRange": "^1.3.0",
+    "dashboardPanels": [
+      {
+        "name": "stationIdent",
+        "title": "Station Identification",
+        "width": 3,
+        "file": "station-identification/station-identification.html",
+        "headerColor": "#00AEB3"
+      },
+      {
+        "name": "nowPlaying",
+        "title": "Now Playing",
+        "width": 3,
+        "file": "now-playing/now-playing.html",
+        "headerColor": "#00AEB3"
+      },
+      {
+        "name": "eventTimer",
+        "title": "Event Timer",
+        "width": 3,
+        "file": "event-timer/event-timer.html",
+        "headerColor": "#00AEB3"
+      },
+      {
+        "name": "countdownControl",
+        "title": "Countdown Overlay",
+        "width": 3,
+        "file": "countdown/countdown-control.html",
+        "headerColor": "#00AEB3",
+        "workspace": "Countdown"
+      },
+      {
+        "name": "countdown",
+        "title": "Countdown",
+        "width": 3,
+        "file": "countdown/countdown.html",
+        "headerColor": "#00AEB3",
+        "workspace": "Countdown"
+      },
+      {
+        "name": "countdownEdit",
+        "title": "Edit Countdown",
+        "width": 2,
+        "dialog": true,
+        "dialogButtons": [
+          {
+            "name": "save",
+            "type": "confirm"
+          },
+          {
+            "name": "cancel",
+            "type": "dismiss"
+          }
+        ],
+        "file": "countdown/dialog/countdown-edit.html",
+        "headerColor": "#00AEB3"
+      },
+      {
+        "name": "deathCount",
+        "title": "Death Count",
+        "width": 3,
+        "file": "death-count/death-count.html",
+        "headerColor": "#00AEB3"
+      },
+      {
+        "name": "deathCountEdit",
+        "title": "Edit Death Count",
+        "width": 2,
+        "dialog": true,
+        "dialogButtons": [
+          {
+            "name": "save",
+            "type": "confirm"
+          },
+          {
+            "name": "cancel",
+            "type": "dismiss"
+          }
+        ],
+        "file": "death-count/dialog/death-count-edit.html",
+        "headerColor": "#00AEB3"
+      },
+      {
+        "name": "donationTotal",
+        "title": "Donation Total",
+        "width": 2,
+        "file": "donations/donation-total.html",
+        "headerColor": "#00AEB3",
+        "workspace": "Donations"
+      },
+      {
+        "name": "donationList",
+        "title": "Donations",
+        "width": 4,
+        "file": "donations/donation-list.html",
+        "headerColor": "#00AEB3",
+        "workspace": "Donations"
+      },
+      {
+        "name": "donationPolls",
+        "title": "Donation Polls",
+        "width": 4,
+        "file": "donation-polls/donation-poll-list.html",
+        "headerColor": "#00AEB3",
+        "workspace": "Goals/Polls"
+      },
+      {
+        "name": "donationGoals",
+        "title": "Donation Goals",
+        "width": 4,
+        "file": "donation-goals/donation-goal-list.html",
+        "headerColor": "#00AEB3",
+        "workspace": "Goals/Polls"
+      },
+      {
+        "name": "donationGoalAdd",
+        "title": "Add Donation Goal",
+        "width": 2,
+        "dialog": true,
+        "dialogButtons": [
+          {
+            "name": "save",
+            "type": "confirm"
+          },
+          {
+            "name": "cancel",
+            "type": "dismiss"
+          }
+        ],
+        "file": "donation-goals/dialog/donation-goal-add.html",
+        "headerColor": "#00AEB3"
+      },
+      {
+        "name": "schedule",
+        "title": "Schedule",
+        "width": 8,
+        "file": "schedule/schedule-display.html",
+        "headerColor": "#00AEB3",
+        "workspace": "Schedule"
+      },
+      {
+        "name": "secretSounds",
+        "title": "Secret Sounds",
+        "width": 8,
+        "file": "secret-sounds/secret-sounds.html",
+        "headerColor": "#00AEB3",
+        "workspace": "Secret Sounds"
+      },
+      {
+        "name": "secretSoundAdd",
+        "title": "Add Secret Sound",
+        "width": 2,
+        "dialog": true,
+        "dialogButtons": [
+          {
+            "name": "save",
+            "type": "confirm"
+          },
+          {
+            "name": "cancel",
+            "type": "dismiss"
+          }
+        ],
+        "file": "secret-sounds/dialog/secret-sound-add.html",
+        "headerColor": "#00AEB3"
+      }
+    ],
+    "graphics": [
+      {
+        "file": "16_9_game.html",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "file": "16_9_game_greenscreen.html",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "file": "changing_game.html",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "file": "break_screen.html",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "file": "countdown_screen.html",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "file": "attendee.html",
+        "width": 1280,
+        "height": 720
+      }
+    ],
+    "assetCategories": [
+      {
+        "name": "secret_sound_images",
+        "title": "Secret Sound Images",
+        "allowedTypes": [
+          "png",
+          "jpg",
+          "jpeg"
+        ]
+      }
+    ],
+    "soundCues": [
+      {
+        "name": "secret-sounds",
+        "channels": 1,
+        "assignable": true,
+        "defaultVolume": 20
+      }
+    ]
+  }
+}

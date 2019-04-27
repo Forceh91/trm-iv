@@ -1,0 +1,42 @@
+<dom-module id="trm-omnibar-cta">
+  <template>
+    <style>
+      :host {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        position: absolute;
+        font-size: 22px;
+        width: 100%;
+      }
+
+      #benefits,
+      #donate {
+        align-items: center;
+        color: #fff;
+        display: flex;
+        height: 100%;
+        left: 20px;
+        opacity: 0;
+        position: absolute;
+        width: 100%;
+      }
+
+      #charity,
+      #donateurl {
+        color: #00aeb3;
+        font-weight: bold;
+      }
+    </style>
+
+    <div id="benefits">
+      <span>All donations will benefit <span id="charity"></span></span>
+    </div>
+
+    <div id="donate">
+      <span>Donate now at <span id="donateurl"></span></span>
+    </div>
+  </template>
+
+  <script src="trm-omnibar-cta.js"></script>
+</dom-module>

@@ -1,0 +1,34 @@
+<dom-module id="trm-omnibar-total">
+  <link rel="import" href="../../../../shared/fonts/roboto/import.html" />
+
+  <template>
+    <style>
+      :host {
+        display: flex;
+        font-family: "Roboto";
+        width: auto;
+      }
+
+      #total {
+        align-items: center;
+        background: #00aeb3;
+        color: #fff;
+        display: flex;
+        padding: 0 10px;
+      }
+
+      #totalAmount {
+        font-size: 30px;
+        font-weight: bold;
+        margin-left: 2px;
+      }
+    </style>
+
+    <div id="total">
+      <span id="totalCurrency">$</span>
+      <span id="totalAmount"></span>
+    </div>
+  </template>
+
+  <script src="trm-omnibar-total.js"></script>
+</dom-module>

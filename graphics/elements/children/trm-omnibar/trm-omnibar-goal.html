@@ -1,0 +1,72 @@
+<dom-module id="trm-omnibar-goal">
+  <template>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      :host {
+        box-sizing: border-box;
+        display: flex;
+        float: left;
+        height: 100%;
+        min-width: 100%;
+        width: 100%;
+      }
+
+      #label {
+        align-items: center;
+        background: #009196;
+        color: #fff;
+        display: flex;
+        float: left;
+        font-size: 16px;
+        font-weight: bold;
+        max-width: 33%;
+        padding: 10px;
+        text-transform: uppercase;
+        width: auto;
+      }
+
+      #body {
+        float: left;
+        position: relative;
+        width: 100%;
+      }
+
+      #progressFill {
+        background: #666;
+        bottom: 0;
+        left: 0;
+        opacity: 0.4;
+        position: absolute;
+        top: 0;
+      }
+
+      #progressBlock {
+        align-items: center;
+        display: flex;
+        font-size: 20px;
+        height: 100%;
+        padding: 0 10px;
+        position: absolute;
+        width: 100%;
+      }
+
+      #goal {
+        margin-left: auto;
+      }
+    </style>
+
+    <div id="label">Goal - [[goal.reward]]</div>
+    <div id="body">
+      <div id="progressFill"></div>
+      <div id="progressBlock">
+        <div id="remaining"></div>
+        <div id="goal">$[[goal.total]]</div>
+      </div>
+    </div>
+  </template>
+
+  <script src="trm-omnibar-goal.js"></script>
+</dom-module>

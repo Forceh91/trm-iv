@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Donation Goal Add</title>
+
+    <link rel="import" href="../../../bower_components/polymer/polymer.html">
+    <link rel="import" href="../../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+    <link rel="import" href="../../../bower_components/paper-button/paper-button.html">
+    <link rel="import" href="../../../bower_components/paper-input/paper-input.html">
+</head>
+<body>
+    <dom-module id="dashboard-donation-goal-add-dialog">
+        <template>
+            <style is="custom-style" include="iron-flex iron-flex-alignment">
+                * {
+                    box-sizing: border-box;
+                }
+
+                input {
+                    color: #FFF;
+                }
+            </style>
+
+            <div class="row">
+                <paper-input id="amount" label="Amount" type="currency" value="5" required></paper-input>
+            </div>
+
+            <div class="row">
+                <paper-input id="reward" label="Reward" type="text" required></paper-input>
+            </div>
+        </template>
+        
+        <script src="donation-goal-add.js"></script>
+    </dom-module>
+
+    <dashboard-donation-goal-add-dialog></dashboard-donation-goal-add-dialog>
+</body>
+</html>

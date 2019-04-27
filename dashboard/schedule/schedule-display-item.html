@@ -1,0 +1,72 @@
+<dom-module id="dashboard-schedule-display-item">
+  <template>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      #scheduleItem {
+        display: block;
+        width: 100%;
+      }
+
+      .row {
+        display: block;
+        width: 100%;
+      }
+
+      .row:not(:last-child) {
+        margin-bottom: 20px;
+      }
+
+      h4 {
+        color: #aaa;
+        font-size: 14px;
+        margin: 0;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+      }
+
+      .data {
+        font-size: 18px;
+        width: 100%;
+      }
+    </style>
+
+    <div id="scheduleItem">
+      <div class="row">
+        <h4>Game</h4>
+        <div id="game" class="data">N/A</div>
+      </div>
+
+      <div class="row">
+        <h4>Runner</h4>
+        <div id="runner" class="data">N/A</div>
+      </div>
+
+      <div class="row">
+        <h4>Category</h4>
+        <div id="category" class="data">N/A</div>
+      </div>
+
+      <div class="row">
+        <h4>Platform</h4>
+        <div id="platform" class="data">N/A</div>
+      </div>
+
+      <div class="row">
+        <h4>Year</h4>
+        <div id="year" class="data">N/A</div>
+      </div>
+
+      <!--
+      <div class="row">
+        <h4>Donation Goals</h4>
+        <div id="donationGoals" class="data">N/A</div>
+      </div>
+      -->
+    </div>
+  </template>
+
+  <script src="schedule-display-item.js"></script>
+</dom-module>

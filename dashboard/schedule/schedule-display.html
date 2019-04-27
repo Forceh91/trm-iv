@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Schedule</title>
+
+    <link rel="import" href="../../bower_components/polymer/polymer.html">
+    <link rel="import" href="schedule-display-item.html"/>
+    <link rel="import" href="../../bower_components/paper-button/paper-button.html">
+</head>
+<body>
+    <dom-module id="dashboard-schedule-display">
+        <template>
+            <style>
+                * {
+                    box-sizing: border-box;
+                }
+
+                .schedule-item-container {
+                    display: block;
+                    float: left;
+                    width: 50%;
+                }
+
+                .schedule-item-container:not(:last-child) {
+                    margin-right: 15px;
+                    width: calc(50% - 15px);
+                }
+
+                #currentGame {
+                    color: #00AEB3;
+                    font-weight: bold;
+                }
+
+                paper-button {
+                    width: 100%;
+                }
+
+                paper-button.success:not([disabled]) {
+                    background: green;
+                    color: #FFF;
+                }
+
+                paper-button.danger:not([disabled]) {
+                    background: red;
+                    color: #FFF;
+                }
+
+                paper-button.warning:not([disabled]) {
+                    background: purple;
+                    color: #FFF;
+                }
+
+                .row {
+                    display: flex;
+                }
+
+                .controls {
+                    display: flex;
+                    margin-top: 20px;
+                }
+
+                h4 {
+                    text-transform: uppercase;
+                    margin: 0;
+                    margin-bottom: 20px;
+                }
+            </style>
+
+            <div class="row">
+                <div class="schedule-item-container">
+                    <h4>Current Playing</h4>
+                    <div id="currentGame"><h4>Please wait...</h4></div>
+                </div>
+                <div class="schedule-item-container">
+                    <h4>Next Up</h4>
+                    <div id="nextGame"><h4>Please wait...</h4></div>
+                </div>
+            </div>
+            <div class="controls layout horizontal">
+                <paper-button id="selectPrevGame" class="danger" raised disabled>Prev Game</paper-button>
+                <paper-button id="selectNextGame" class="success" raised>Next Game</paper-button>
+            </div>
+            <div class="controls layout horizontal">
+                <paper-button id="fetchSchedule" class="warning" raised><span id="fetch">Fetch Schedule</span></paper-button>
+            </div>
+        </template>
+
+        <script src="schedule-display.js"></script>
+    </dom-module>
+
+    <dashboard-schedule-display></dashboard-schedule-display>
+</body>
+</html>

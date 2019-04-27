@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Countdown Control</title>
+
+    <link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+    <link rel="import" href="../../bower_components/paper-button/paper-button.html">
+</head>
+<body>
+    <dom-module id="dashboard-countdown-control">
+        <template>
+            <style is="custom-style" include="iron-flex iron-flex-alignment">
+                * {
+                    box-sizing: border-box;
+                }
+        
+                .showing {
+                    color: green;
+                }
+        
+                .faded {
+                    color: red;
+                }
+        
+                #isShowing {
+                    text-transform: uppercase;
+                    text-align: center;
+                }
+        
+                #controls {
+                    display: flex;
+                }
+        
+                paper-button {
+                    width: 100%;
+                }
+        
+                #hideStationIdent {
+                    display: none;
+                }
+        
+                paper-button.success:not([disabled]) {
+                    background: green;
+                    color: #FFF;
+                }
+        
+                paper-button.danger:not([disabled]) {
+                    background: red;
+                    color: #FFF;
+                }
+            </style>
+
+            <h2 id="isShowing" class="showing">Showing</h2>
+            <div id="controls" class="layout horizontal">
+                <paper-button id="showCountdownOverlay" class="success" raised disabled>Show</paper-button>
+                <paper-button id="hideCountdownOverlay" class="danger" raised>Hide</paper-button>
+            </div>
+        </template>
+        
+        <script src="countdown-control.js"></script>
+    </dom-module>
+
+    <dashboard-countdown-control></dashboard-countdown-control>
+</body>
+</html>

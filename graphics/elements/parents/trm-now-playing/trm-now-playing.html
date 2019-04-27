@@ -1,0 +1,36 @@
+<dom-module id="trm-now-playing">
+  <link
+    rel="import"
+    href="../../../../shared/fonts/fontawesome/font-awesome.min.css"
+    type="css"
+  />
+
+  <template>
+    <style>
+      #body {
+        align-items: center;
+        color: #fff;
+        display: flex;
+        font-size: 20px;
+        height: 100%;
+        justify-content: center;
+        width: 100%;
+      }
+
+      span {
+        text-shadow: 2px 1px #000;
+      }
+
+      .fa.fa-music {
+        margin-right: 15px;
+      }
+    </style>
+
+    <div id="body">
+      <span class="fa fa-music"></span
+      ><span id="artist"></span>&nbsp;-&nbsp;<span id="track"></span>
+    </div>
+  </template>
+
+  <script src="trm-now-playing.js"></script>
+</dom-module>

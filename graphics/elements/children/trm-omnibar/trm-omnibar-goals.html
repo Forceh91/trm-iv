@@ -1,0 +1,28 @@
+<link
+  rel="import"
+  href="../../../../bower_components/iron-selector/iron-selector.html"
+/>
+<link rel="import" href="trm-omnibar-goal.html" />
+
+<dom-module id="trm-omnibar-goals">
+  <template>
+    <style>
+      :host {
+        display: flex;
+        height: 100%;
+        width: 100%;
+      }
+
+      #goals {
+        display: flex;
+        height: 100%;
+        opacity: 0;
+        width: 100%;
+      }
+    </style>
+
+    <iron-selector id="goals"></iron-selector>
+  </template>
+
+  <script src="trm-omnibar-goals.js"></script>
+</dom-module>

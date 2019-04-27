@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>16x9 Game</title>
+
+    <link rel="stylesheet" href="style/layout.css" />
+    <link rel="import" href="../shared/imports/required.html" />
+    <link
+      rel="stylesheet"
+      href="../shared/fonts/fontawesome/font-awesome.min.css"
+    />
+    <link rel="import" href="elements/parents/trm-omnibar/trm-omnibar.html" />
+    <link
+      rel="import"
+      href="elements/parents/trm-donation-notifier/trm-donation-notifier.html"
+    />
+    <link
+      rel="import"
+      href="elements/parents/trm-station-identification/trm-station-identification.html"
+    />
+    <link rel="import" href="elements/parents/trm-run-info/trm-run-info.html" />
+
+    <style>
+      body {
+        background: url("./img/16_9_background.jpg") 100% 100%;
+        background-size: cover;
+      }
+
+      #container {
+        background: rgba(0, 0, 0, 0.8);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+      <layout-app></layout-app>
+    </div>
+
+    <dom-module id="layout-app">
+      <template>
+        <style>
+          * {
+            box-sizing: border-box;
+          }
+
+          #omnibar {
+            bottom: 0;
+            display: flex;
+            left: 0;
+            position: absolute;
+            right: 0;
+          }
+
+          #donation-notifier {
+            bottom: 60px;
+            position: absolute;
+            right: 10px;
+          }
+
+          #station-identification {
+            bottom: 50px;
+            left: 0;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 755px;
+          }
+
+          #game-feed {
+            background: #000;
+            border: 2px solid #00aeb3;
+            height: 533px;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            width: 950px;
+          }
+
+          #game-feed img {
+            height: 100%;
+            width: 100%;
+          }
+
+          #run-info {
+            left: 10px;
+            position: absolute;
+            top: 10px;
+          }
+        </style>
+
+        <div id="omnibar">
+          <trm-omnibar></trm-omnibar>
+        </div>
+
+        <div id="donation-notifier">
+          <trm-donation-notifier></trm-donation-notifier>
+        </div>
+
+        <div id="station-identification">
+          <trm-station-identification></trm-station-identification>
+        </div>
+
+        <div id="game-feed"></div>
+
+        <div id="run-info">
+          <trm-run-info></trm-run-info>
+        </div>
+      </template>
+
+      <script>
+        Polymer({
+          is: "layout-app",
+          properties: {}
+        });
+      </script>
+    </dom-module>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        TweenLite.to(document.body, 0.333, {
+          opacity: 1,
+          ease: Power1.easeOut
+        });
+      });
+    </script>
+  </body>
+</html>

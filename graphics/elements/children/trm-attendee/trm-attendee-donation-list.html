@@ -1,0 +1,47 @@
+<link
+  rel="import"
+  href="../../../../bower_components/iron-selector/iron-selector.html"
+/>
+<link rel="import" href="trm-attendee-donation-list-item.html" />
+
+<dom-module id="trm-attendee-donation-list">
+  <template>
+    <style>
+      :host {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 100%;
+        width: 100%;
+      }
+
+      #donationlist {
+        align-items: center;
+        color: #fff;
+        font-size: 30px;
+        justify-content: center;
+        margin-top: 20px;
+        width: 100%;
+      }
+
+      .donation-list-title {
+        font-size: 15px;
+        text-transform: uppercase;
+      }
+
+      .donation-list-no-items {
+        font-size: 20px;
+        margin-top: 20px;
+        text-transform: uppercase;
+      }
+    </style>
+
+    <div class="donation-list-title">Donations</div>
+    <div id="noDonations" class="donation-list-no-items">
+      There are currently no donations
+    </div>
+    <iron-selector id="donationlist"></iron-selector>
+  </template>
+
+  <script src="trm-attendee-donation-list.js"></script>
+</dom-module>

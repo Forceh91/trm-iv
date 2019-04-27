@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Countdown Screen</title>
+
+    <link rel="stylesheet" href="style/layout.css"/>
+    <link rel="import" href="../shared/imports/required.html"/>
+    <link rel="stylesheet" href="../shared/fonts/fontawesome/font-awesome.min.css"/>
+    <link rel="import" href="elements/parents/trm-omnibar/trm-omnibar.html"/>
+    <link rel="import" href="elements/parents/trm-donation-notifier/trm-donation-notifier.html"/>
+    <link rel="import" href="elements/parents/trm-countdown/trm-countdown.html"/>
+</head>
+
+<body>
+    <style>
+        body {
+            overflow: hidden;
+        }
+        
+        #countdown-video {
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: -1;
+        }
+    </style>
+
+    <div id="container">
+        <layout-app></layout-app>
+    </div>
+
+    <div id="countdown-video">
+        <video src="img/countdown.mp4" autoplay/>
+    </div>
+
+    <dom-module id="layout-app">
+        <template>
+            <style>
+                * {
+                    box-sizing: border-box;
+                }
+
+                :host {
+                    height: 100%;
+                    left: 0;
+                    position: fixed;
+                    top: 0;
+                    width: 100%;
+                }
+
+                #omnibar {
+                    bottom: 0;
+                    display: flex;
+                    left: 0;
+                    position: absolute;
+                    right: 0;
+                }
+
+                #donationNotifier {
+                    bottom: 69px;
+                    position: absolute;
+                    right: 0;
+                }
+
+                #body {
+                    align-items: center;
+                    color: #FFF;
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    height: calc(100% - 45px);
+                    justify-content: center;
+                    text-shadow: 2px 1px #000;
+                    width: 100%;
+                }
+
+                h1, h2 {
+                    margin: 0;
+                }
+
+                h1:not(:last-child), h2:not(:last-child) {
+                    margin-bottom: 15px;
+                }
+
+                .cta {
+                    color: #00AEB3;
+                }
+            </style>
+
+            <div id="omnibar">
+                <trm-omnibar data-hide-timer="true" data-hide-deaths="true"></trm-omnibar>
+            </div>
+
+            <div id="donationNotifier">
+                <trm-donation-notifier></trm-donation-notifier>
+            </div>
+
+            <div id="body">
+                <trm-countdown></trm-countdown>
+            </div>
+        </template>
+
+        <script>
+            Polymer({
+                is: "layout-app",
+                properties: {}
+            });
+        </script>
+    </dom-module>
+
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            TweenLite.to(document.body, 0.333, {
+                opacity: 1,
+                ease: Power1.easeOut
+            });
+
+            var omnibar = document.getElementById("container"), notifier = document.getElementById("donationNotifier"), body = document.getElementById("body");
+
+            nodecg.listenFor("countdownFade", () => {
+                const tl = new TimelineLite();
+                tl.to([omnibar, notifier, body], .75, { opacity: 0, ease: Power3.easeOut });
+            });
+
+            nodecg.listenFor("countdownUnfade", () => {
+                const tl = new TimelineLite();
+                tl.to([omnibar, notifier, body], .75, { opacity: 1, ease: Power3.easeOut });
+            });
+
+            nodecg.sendMessage("countdownUnfade");
+        });
+    </script>
+</body>
+</html>

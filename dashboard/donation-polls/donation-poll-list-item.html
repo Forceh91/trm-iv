@@ -1,0 +1,68 @@
+<dom-module id="dashboard-donation-poll-list-item">
+    <template>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            #body {
+                align-items: center;
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+            }
+
+            .row {
+                align-items: center;
+                display: flex;
+                margin-bottom: 15px;
+                width: 100%;
+            }
+
+            .row:last-child {
+                margin-bottom: 0;
+            }
+
+            .row > div {
+                width: 100%;
+            }
+
+            .row.header {
+                font-weight: bold;
+            }
+
+            .poll-option .label {
+                font-weight: bold;
+                margin-bottom: 10px;
+                width: 100%;
+            }
+
+            paper-button {
+                float: right;
+                margin: 0;
+                width: 100px;
+            }
+
+            paper-button.danger:not([disabled]) {
+                background: indianred;
+                color: #FFF;
+            }
+        </style>
+
+        <div id="body">
+            <div class="row header">
+                <div>[[poll.name]]</div>
+            </div>
+            <div class="row">
+                <template is="dom-repeat" items="[[poll.options]]" as="polloption" sort="_sortPoll">
+                    <div class="poll-option">
+                        <div class="label">[[polloption.name]]</div>
+                        <div class="total">$[[_parseTotal(polloption.totalAmountRaised)]]</div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </template>
+
+    <script src="donation-poll-list-item.js"></script>
+</dom-module>

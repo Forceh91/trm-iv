@@ -1,0 +1,60 @@
+<dom-module id="trm-attendee-donation-goal-item">
+  <template>
+    <style>
+      :host {
+        width: 100%;
+      }
+
+      #body {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 20px;
+        justify-content: center;
+        padding-bottom: 20px;
+        width: 100%;
+      }
+
+      .row {
+        display: flex;
+        width: 100%;
+      }
+
+      #amount-container {
+        display: inline-block;
+        text-align: right;
+        width: 100%;
+      }
+
+      #amount,
+      #goal {
+        font-weight: bold;
+      }
+
+      #goal {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
+      }
+
+      #remaining-container {
+        color: #aaa;
+        font-size: 20px;
+        margin-top: 20px;
+        width: 100%;
+      }
+    </style>
+
+    <div id="body">
+      <div class="row">
+        <div id="goal"></div>
+        <div id="amount-container">$<span id="amount"></span></div>
+      </div>
+      <div id="remaining-container">
+        $<span id="remaining"></span> remaining
+      </div>
+    </div>
+  </template>
+
+  <script src="trm-attendee-donation-goal-item.js"></script>
+</dom-module>

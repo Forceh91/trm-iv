@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Death Count</title>
+
+    <link rel="import" href="../../bower_components/polymer/polymer.html">
+    <link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+    <link rel="import" href="../../bower_components/paper-button/paper-button.html">
+</head>
+<body>
+    <dom-module id="dashboard-death-count">
+        <template>
+            <style is="custom-style" include="iron-flex iron-flex-alignment">
+                * {
+                    box-sizing: border-box;
+                }
+
+                #deaths {
+                    font-weight: normal;
+                    text-align: center;
+                    width: 100%;
+                }
+
+                .controls {
+                    display: flex;
+                }
+
+                .controls:not(:last-child) {
+                    margin-bottom: 15px;
+                }
+
+                paper-button {
+                    width: 100%;
+                }
+
+                paper-button.success:not([disabled]) {
+                    background: green;
+                    color: #FFF;
+                }
+
+                paper-button.danger:not([disabled]) {
+                    background: red;
+                    color: #FFF;
+                }
+
+                paper-button.warning:not([disabled]) {
+                    background: purple;
+                    color: #FFF;
+                }
+            </style>
+
+            <h1 id="deaths">0</h1>
+            <div class="controls" class="layout horizontal">
+                <paper-button id="removeDeath" class="danger" raised>-1</paper-button>
+                <paper-button id="addDeath" class="success" raised>+1</paper-button>
+                <paper-button id="editDeaths" class="warning" raised nodecg-dialog="deathCountEdit">Edit</paper-button>
+            </div>
+        </template>
+
+        <script src="death-count.js"></script>
+    </dom-module>
+
+    <dashboard-death-count></dashboard-death-count>
+</body>
+</html>

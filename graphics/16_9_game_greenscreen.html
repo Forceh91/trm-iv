@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>16x9 Game Greenscreen</title>
+
+    <link rel="stylesheet" href="style/layout.css" />
+    <link rel="import" href="../shared/imports/required.html" />
+    <link
+      rel="stylesheet"
+      href="../shared/fonts/fontawesome/font-awesome.min.css"
+    />
+    <link rel="import" href="elements/parents/trm-omnibar/trm-omnibar.html" />
+    <link
+      rel="import"
+      href="elements/parents/trm-donation-notifier/trm-donation-notifier.html"
+    />
+    <link
+      rel="import"
+      href="elements/parents/trm-station-identification/trm-station-identification.html"
+    />
+    <link rel="import" href="elements/parents/trm-run-info/trm-run-info.html" />
+
+    <style>
+      body {
+        background: #000;
+      }
+
+      #container {
+        background: rgba(0, 0, 0, 0.8);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+      <layout-app></layout-app>
+    </div>
+
+    <dom-module id="layout-app">
+      <template>
+        <style>
+          * {
+            box-sizing: border-box;
+          }
+
+          #game-feed {
+            background: rgb(0, 177, 64);
+            height: 531px;
+            position: absolute;
+            right: 12px;
+            top: 12px;
+            width: 948px;
+          }
+
+          #webcam-feed {
+            background: rgb(0, 177, 64);
+            bottom: 60px;
+            height: 300px;
+            left: 10px;
+            position: absolute;
+            width: 300px;
+          }
+        </style>
+
+        <div id="game-feed"></div>
+        <div id="webcam-feed"></div>
+      </template>
+
+      <script>
+        Polymer({
+          is: "layout-app",
+          properties: {}
+        });
+      </script>
+    </dom-module>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        TweenLite.to(document.body, 0.333, {
+          opacity: 1,
+          ease: Power1.easeOut
+        });
+      });
+    </script>
+  </body>
+</html>

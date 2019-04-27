@@ -1,0 +1,55 @@
+<link
+  rel="import"
+  href="../../../../bower_components/iron-selector/iron-selector.html"
+/>
+<link rel="import" href="trm-attendee-donation-goal-item.html" />
+
+<dom-module id="trm-attendee-donation-goals">
+  <template>
+    <style>
+      :host {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 100%;
+        overflow: hidden;
+        width: 100%;
+      }
+
+      #goalList {
+        align-items: center;
+        color: #fff;
+        font-size: 30px;
+        justify-content: center;
+        margin-top: 20px;
+        width: 100%;
+      }
+
+      .donation-goals-title {
+        font-size: 15px;
+        text-transform: uppercase;
+      }
+
+      #goalList trm-attendee-donation-goal-item {
+        display: none;
+      }
+
+      #goalList trm-attendee-donation-goal-item.iron-selected {
+        opacity: 0;
+        display: flex;
+      }
+
+      #noData {
+        font-size: 20px;
+        margin-top: 20px;
+        text-transform: uppercase;
+      }
+    </style>
+
+    <div class="donation-goals-title">Donation Goals</div>
+    <div id="noData">There are currently no donation goals</div>
+    <iron-selector id="goalList"></iron-selector>
+  </template>
+
+  <script src="trm-attendee-donation-goals.js"></script>
+</dom-module>

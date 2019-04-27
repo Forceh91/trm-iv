@@ -1,0 +1,107 @@
+<dom-module id="trm-run-info">
+  <link
+    rel="import"
+    href="../../../../shared/fonts/fontawesome/font-awesome.min.css"
+    type="css"
+  />
+  <template>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      :host {
+        border-top: 0;
+        color: #fff;
+        display: flex;
+        overflow: hidden;
+        width: 300px;
+      }
+
+      #body {
+        align-items: center;
+        background: #444;
+        border: 2px solid #00aeb3;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+        padding: 10px;
+        width: 100%;
+      }
+
+      #content {
+        height: 100%;
+        width: 100%;
+      }
+
+      .row {
+        overflow: hidden;
+      }
+
+      .row:not(:first-child) {
+        margin-top: 20px;
+      }
+
+      .row:last-child {
+        margin-bottom: 10px;
+      }
+
+      h1 {
+        font-size: 1.3rem;
+        margin: 0;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+      }
+
+      .data {
+        color: #00aeb3;
+        font-size: 1.25rem;
+        padding-left: 15px;
+        width: 100%;
+      }
+
+      .runner-container {
+        width: 200%;
+      }
+
+      .runner-container .data {
+        float: left;
+        width: 50%;
+      }
+
+      .fa {
+        margin-right: 10px;
+      }
+    </style>
+
+    <div id="body">
+      <div id="content">
+        <div class="row">
+          <h1>Runner</h1>
+          <div class="runner-container">
+            <div class="data" id="runnerContainer">
+              <span class="fa fa-user"></span><span id="runner"></span>
+            </div>
+            <div class="data" id="runnerTwitchContainer">
+              <i class="fa fa-twitch"></i><span id="runnerTwitch"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <h1>Game</h1>
+          <div class="data" id="game"></div>
+        </div>
+        <div class="row">
+          <h1>Category</h1>
+          <div class="data" id="category"></div>
+        </div>
+        <div class="row">
+          <h1>Platform</h1>
+          <div class="data" id="platform"></div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <script src="trm-run-info.js"></script>
+</dom-module>

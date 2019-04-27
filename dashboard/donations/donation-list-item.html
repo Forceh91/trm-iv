@@ -1,0 +1,102 @@
+<dom-module id="dashboard-donation-list-item">
+    <template>
+        <style>
+            :host {
+                display: block;
+                width: 100%;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            #body {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 15px;
+                width: 100%;
+            }
+
+            .row {
+                display: flex;
+                width: 100%;
+            }
+
+            #amount-container {
+                display: inline-block;
+                text-align: right;
+                width: 100%;
+            }
+
+            #amount,
+            #name {
+                font-weight: bold;
+            }
+
+            #name {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                width: 100%;
+            }
+
+            #comment {
+                color: #888;
+                margin-top: 10px;
+                width: 100%;
+            }
+
+            paper-button.mark-as-read {
+                background: teal;
+                color: #FFF;
+                font-size: .8rem;
+                margin: 0;
+                margin-left: auto;
+            }
+            
+            paper-button.mark-as-read {
+                margin-top: 15px;
+            }
+
+            #tags {
+                width: 100%;
+            }
+
+            #tags .tag {
+                background: teal;
+                color: #FFF;
+                display: inline-block;
+                font-size: .7rem;
+                font-weight: bold;
+                margin-bottom: 10px;
+                margin-top: 20px;                
+                padding: 10px;
+                text-transform: uppercase;
+                width: auto;
+            }
+
+            #tags .tag:not(:first-child) {
+                margin-left: 10px;
+            }
+
+            #tags #needWheelspin {
+                background: indianred;
+            }
+        </style>
+
+        <div id="body">
+            <div class="row">
+                <div id="name"></div>
+                <div id="amount-container">$<span id="amount"></span></div>
+            </div>
+            <div id="tags">
+                <div class="tag" id="needWheelspin">Requires wheelspin</div>
+            </div>
+            <div id="comment"></div>
+            <paper-button class="mark-as-read" id="markDonationRead" raised>Mark as read</paper-button>
+        </div>
+    </template>
+
+    <script src="donation-list-item.js"></script>
+</dom-module>

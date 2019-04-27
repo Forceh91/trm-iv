@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Donation Total</title>
+
+    <link rel="import" href="../../bower_components/polymer/polymer.html">
+</head>
+<body>
+    <dom-module id="dashboard-donation-total">       
+        <template>
+            <style is="custom-style" include="iron-flex iron-flex-alignment">
+                * {
+                    box-sizing: border-box;
+                }
+
+                #body {
+                    font-weight: normal;
+                    text-align: center;
+                    width: 100%;
+                }
+            </style>
+
+            <h1 id="body">$<span id="total"></h1>
+        </template>
+        
+        <script src="donation-total.js"></script>
+    </dom-module>
+
+    <dashboard-donation-total></dashboard-donation-total>
+</body>
+</html>

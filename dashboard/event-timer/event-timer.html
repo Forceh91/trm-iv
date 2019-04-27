@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Event Timer</title>
+    <link
+      rel="import"
+      href="../../bower_components/iron-flex-layout/iron-flex-layout-classes.html"
+    />
+    <link rel="import" href="../../bower_components/iron-icons/av-icons.html" />
+    <link
+      rel="import"
+      href="../../bower_components/iron-icons/iron-icons.html"
+    />
+    <link
+      rel="import"
+      href="../../bower_components/paper-button/paper-button.html"
+    />
+    <link rel="import" href="../../bower_components/polymer/polymer.html" />
+    <link
+      rel="import"
+      href="../../bower_components/polymer/polymer-element.html"
+    />
+  </head>
+  <body>
+    <dom-module id="dashboard-event-timer">
+      <template>
+        <style includes="iron-flex-layout iron-flex-alignment">
+          :host {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+          }
+
+          #timer {
+            font-size: 2rem;
+            margin-bottom: 20px;
+          }
+
+          .start {
+            background: green;
+          }
+
+          .pause {
+            background: purple;
+          }
+
+          .reset {
+            background: darkred;
+          }
+
+          .buttonContainer {
+            clear: both;
+            display: flex;
+            width: 100%;
+          }
+
+          .buttonContainer paper-button {
+            width: 100%;
+          }
+
+          .buttonContainer:not(:last-child) {
+            margin-bottom: 10px;
+          }
+        </style>
+
+        <div id="timer">00:00</div>
+
+        <div class="buttonContainer">
+          <paper-button id="startTimer" class="start">Start</paper-button>
+          <paper-button id="pauseTimer" class="pause">Pause</paper-button>
+        </div>
+
+        <div class="buttonContainer">
+          <paper-button id="resetTimer" class="reset">Reset</paper-button>
+        </div>
+      </template>
+
+      <script src="event-timer.js"></script>
+    </dom-module>
+
+    <dashboard-event-timer></dashboard-event-timer>
+  </body>
+</html>

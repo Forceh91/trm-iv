@@ -1,0 +1,48 @@
+<link rel="import" href="../../children/trm-omnibar/trm-omnibar-cta.html" />
+<link rel="import" href="../../children/trm-omnibar/trm-omnibar-socials.html" />
+<link rel="import" href="../../children/trm-omnibar/trm-omnibar-goals.html" />
+<link rel="import" href="../../children/trm-omnibar/trm-omnibar-polls.html" />
+<link rel="import" href="../../children/trm-omnibar/trm-omnibar-total.html" />
+<link rel="import" href="../../children/trm-omnibar/trm-omnibar-timer.html" />
+
+<dom-module id="trm-omnibar">
+  <template>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      :host {
+        border-top: 0;
+        color: #fff;
+        height: 50px;
+        display: flex;
+        overflow: hidden;
+        width: 100vw;
+      }
+
+      #body {
+        align-items: center;
+        background: #444;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+        width: 100%;
+      }
+
+      #content {
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+
+    <trm-omnibar-timer id="timer"></trm-omnibar-timer>
+    <div id="body">
+      <div id="content"></div>
+      <trm-omnibar-cta id="cta"></trm-omnibar-cta>
+    </div>
+    <trm-omnibar-total></trm-omnibar-total>
+  </template>
+
+  <script src="trm-omnibar.js"></script>
+</dom-module>

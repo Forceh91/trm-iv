@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Death Count Edit</title>
+
+    <link rel="import" href="../../../bower_components/polymer/polymer.html">
+    <link rel="import" href="../../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+    <link rel="import" href="../../../bower_components/paper-button/paper-button.html">
+    <link rel="import" href="../../../bower_components/paper-input/paper-input.html">
+</head>
+<body>
+    <style is="custom-style" include="iron-flex iron-flex-alignment">
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+
+    <paper-input id="deaths" label="Deaths" type="number" value="0"></paper-input>
+
+	<script>
+        const deaths = document.getElementById('deaths');
+        document.addEventListener('dialog-confirmed', () => {
+            nodecg.sendMessage('setDeaths', parseInt(deaths.value));
+        });
+    </script>
+</body>
+</html>

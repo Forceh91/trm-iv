@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Changing Game</title>
+
+    <link rel="stylesheet" href="style/layout.css" />
+    <link rel="import" href="../shared/imports/required.html" />
+    <link
+      rel="stylesheet"
+      href="../shared/fonts/fontawesome/font-awesome.min.css"
+    />
+    <link rel="import" href="elements/parents/trm-omnibar/trm-omnibar.html" />
+    <link
+      rel="import"
+      href="elements/parents/trm-donation-notifier/trm-donation-notifier.html"
+    />
+    <link
+      rel="import"
+      href="elements/parents/trm-now-playing/trm-now-playing.html"
+    />
+  </head>
+
+  <style>
+    body {
+      background: url("./img/16_9_background.jpg") 100% 100%;
+      background-size: cover;
+    }
+  </style>
+
+  <body>
+    <div id="container">
+      <layout-app></layout-app>
+    </div>
+
+    <dom-module id="layout-app">
+      <template>
+        <style>
+          * {
+            box-sizing: border-box;
+          }
+
+          :host {
+            background: rgba(0, 0, 0, 0.8);
+            height: 100%;
+            left: 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+          }
+
+          #omnibar {
+            bottom: 0;
+            display: flex;
+            left: 0;
+            position: absolute;
+            right: 0;
+          }
+
+          #donation-notifier {
+            bottom: 50px;
+            position: absolute;
+            right: 0;
+          }
+
+          #donation-notifier trm-donation-notifier {
+            border-bottom: 0;
+            border-right: 0;
+          }
+
+          #now-playing {
+            position: absolute;
+            top: 15px;
+            width: 100%;
+            z-index: 9999;
+          }
+
+          #body {
+            align-items: center;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            height: calc(100% - 50px);
+            justify-content: center;
+            text-shadow: 2px 1px #000;
+            width: 100%;
+          }
+
+          h1,
+          h2 {
+            margin: 0;
+          }
+
+          h1:not(:last-child),
+          h2:not(:last-child) {
+            margin-bottom: 15px;
+          }
+
+          .cta {
+            color: #00aeb3;
+          }
+        </style>
+
+        <div id="omnibar">
+          <trm-omnibar></trm-omnibar>
+        </div>
+
+        <div id="donation-notifier">
+          <trm-donation-notifier></trm-donation-notifier>
+        </div>
+
+        <div id="now-playing">
+          <trm-now-playing></trm-now-playing>
+        </div>
+
+        <div id="body">
+          <h1>We are getting setup for our next game, stay tuned!</h1>
+          <h2 class="cta">donate.tombraidermarathon.com</h2>
+        </div>
+      </template>
+
+      <script>
+        Polymer({
+          is: "layout-app",
+          properties: {}
+        });
+      </script>
+    </dom-module>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        TweenLite.to(document.body, 0.333, {
+          opacity: 1,
+          ease: Power1.easeOut
+        });
+      });
+    </script>
+  </body>
+</html>

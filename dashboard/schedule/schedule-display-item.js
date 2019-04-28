@@ -18,11 +18,15 @@ class DashboardScheduleDisplayItem extends Polymer.Element {
 
     let game = this.game && this.game.data;
 
+    const regex = /(\w+)/;
+    const runnerParsed = game[1].match(regex);
+    const runnerName = runnerParsed && runnerParsed[0];
+
     this.$.game.textContent = game[0] || "N/A";
     this.$.platform.textContent = game[4] || "N/A";
     this.$.category.textContent = game[3] || "N/A";
     this.$.year.textContent = game[5] || "N/A";
-    this.$.runner.textContent = game[1] || "N/A";
+    this.$.runner.textContent = runnerName || "N/A";
 
     if (!game.donation_total || game.donation_total.length < 1) {
       return;

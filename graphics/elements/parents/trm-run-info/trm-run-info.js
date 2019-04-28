@@ -30,6 +30,10 @@
           }
         });
       });
+
+      scheduleSeek.on("change", () => {
+        this.showRunInfo();
+      });
     }
 
     run() {
@@ -97,22 +101,16 @@
       });
     }
 
-    showCTA() {
-      const tl = new TimelineLite();
-
-      tl.call(() => {
-        this.$.content.innerHTML = "";
-      });
-      tl.add(this.$.cta.show(DISPLAY_DURATION));
-      return tl;
-    }
-
     showRunInfo() {
       const tempSchedule = schedule.value;
       const run = tempSchedule[scheduleSeek.value];
       const rundata = run && run.data;
 
-      this.$.runner.innerText = rundata[1] || "N/A";
+      const regex = /(\w+)/;
+      const runnerParsed = rundata[1].match(regex);
+      const runnerName = runnerParsed && runnerParsed[0];
+
+      this.$.runner.innerText = runnerName || "N/A";
       this.$.game.innerText = rundata[0] || "N/A";
       this.$.category.innerText = rundata[3] || "Casual";
       this.$.platform.innerText = `${rundata[4] || "N/A"} (${rundata[5]})`;
@@ -126,8 +124,12 @@
       const tl = new TimelineLite();
       if (!rundata[2]) return tl;
 
+      const regex = /(\w+)/;
+      const runnerParsed = rundata[1].match(regex);
+      const runnerName = runnerParsed && runnerParsed[0];
+
       tl.call(() => {
-        this.$.runner.innerText = rundata[1] || "N/A";
+        this.$.runner.innerText = runnerName || "N/A";
         this.$.runnerTwitch.innerText = rundata[2];
       });
       tl.to({}, DISPLAY_DURATION, {});

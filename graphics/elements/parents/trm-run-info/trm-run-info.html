@@ -15,7 +15,7 @@
         color: #fff;
         display: flex;
         overflow: hidden;
-        width: 300px;
+        width: 100%;
       }
 
       #body {
@@ -71,6 +71,24 @@
 
       .fa {
         margin-right: 10px;
+      }
+
+      .is-wide {
+        align-items: flex-start;
+        display: flex;
+      }
+
+      .is-wide .row {
+        margin: 0;
+        width: 100%;
+      }
+
+      .is-wide .row:not(:last-child) {
+        margin-right: 10px;
+      }
+
+      .is-wide .data {
+        padding: 0;
       }
     </style>
 

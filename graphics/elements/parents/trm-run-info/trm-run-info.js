@@ -13,6 +13,12 @@
       return "trm-run-info";
     }
 
+    static get properties() {
+      return {
+        wide: Boolean
+      };
+    }
+
     ready() {
       super.ready();
 
@@ -34,6 +40,10 @@
       scheduleSeek.on("change", () => {
         this.showRunInfo();
       });
+
+      if (this.wide) {
+        this.$.content.classList.add("is-wide");
+      }
     }
 
     run() {

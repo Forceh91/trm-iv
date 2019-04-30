@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>16x9 Game</title>
+    <title>16x9 Game Race</title>
 
     <link rel="stylesheet" href="style/layout.css" />
     <link rel="import" href="../shared/imports/required.html" />
@@ -83,7 +83,7 @@
             height: 360px;
             position: absolute;
             left: 10px;
-            top: 30px;
+            top: 10px;
             width: 640px;
           }
 
@@ -93,14 +93,23 @@
             height: 360px;
             position: absolute;
             right: 10px;
-            top: 30px;
+            top: 10px;
             width: 640px;
           }
 
           #run-info {
             left: 10px;
             position: absolute;
-            bottom: 60px;
+            top: 380px;
+            right: 10px;
+          }
+
+          #donation-notifier {
+            left: 10px;
+          }
+
+          trm-donation-notifier {
+            width: 1260px;
           }
         </style>
 
@@ -120,7 +129,7 @@
         <div id="game-feed-right"></div>
 
         <div id="run-info">
-          <trm-run-info></trm-run-info>
+          <trm-run-info wide="true"></trm-run-info>
         </div>
       </template>
 

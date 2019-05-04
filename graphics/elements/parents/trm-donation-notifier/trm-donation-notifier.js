@@ -5,6 +5,7 @@
 
   // replicants
   let donations = nodecg.Replicant("donations");
+  const tl = new TimelineLite();
 
   class TRMDonationNotifier extends Polymer.Element {
     static get is() {
@@ -97,8 +98,6 @@
     }
 
     showDonations(newdonations) {
-      const tl = new TimelineLite();
-
       if (!newdonations || newdonations.length < 1) {
         return tl;
       }
